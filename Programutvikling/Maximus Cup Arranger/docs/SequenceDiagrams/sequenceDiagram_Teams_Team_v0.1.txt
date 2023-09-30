@@ -1,0 +1,38 @@
+title Teams, Team Sequence Diagram
+participant Main
+participant Teams
+participant Team
+
+database Database
+
+activate Main
+Main->Teams:create team object
+activate Teams
+Teams->Database:readFromFile()
+activate Database
+Teams<--Database:team data
+loop all teams
+Teams->Team:readFromFile()
+activate Team
+Team->Database:readFromFile()
+Team<--Database:team data
+deactivate Database
+end
+Main->Teams:menu()
+alt add team
+Teams->Team:readData()
+else show teams
+Teams->Team:printData()
+Team->Team:printData()
+end
+Teams->Database:writeToFile()
+activate Database
+Team->Database:writeToFile()
+deactivate Database
+deactivate Teams
+deactivate Team
+
+
+loop until user choice
+Main->Main:menu()
+end

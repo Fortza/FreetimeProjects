@@ -1,0 +1,68 @@
+title Tournaments, Tournament, Matches, Match Sequence Diagram
+
+participant Main
+
+participant Tournaments
+participant Tournament
+participant Matches
+participant Match
+
+database Database
+activate Main
+Main->Tournaments: create object
+activate Tournaments
+Tournaments->Database:readFromFile()
+activate Database
+Tournaments<--Database: number of tournaments
+loop all tournaments
+Tournaments->Tournament: readFromFile()
+activate Tournament
+Tournament->Database:readFromFile()
+Tournament<--Database:tournment data
+deactivate Database
+end
+
+Tournament->Matches:create object
+activate Matches
+Matches->Database:readFromFile()
+activate Database
+Matches<--Database:number of matches
+loop all matches
+Matches->Match:readFromFile()
+activate Match
+Match->Database:readFromFile()
+Match<--Database:match data
+deactivate Database
+end
+
+Main->Tournaments: menu()
+alt create new tournament
+Tournaments->Tournament:add()
+Tournament->Tournament:readData()
+Tournament->Matches:addMatch()
+Matches->Match:readData()
+else select tournament
+Tournaments->Tournaments:selectTournament()
+Tournaments->Tournament:getName()
+Tournaments<--Tournament:name
+Tournaments->Tournament:printData()
+Tournament->Tournament:printData()
+Tournament->Matches:printData()
+Matches->Match:printData()
+Match->Match:printData()
+Tournaments->Database:writeToFile()
+activate Database
+Tournament->Database:writeToFile()
+Matches->Database:writeToFile()
+Match->Database:writeToFile()
+
+deactivate Match
+deactivate Matches
+deactivate Tournament
+deactivate Tournaments
+deactivate Database
+end
+
+loop until user choice
+Main->Main:menu()
+end

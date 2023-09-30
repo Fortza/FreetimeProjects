@@ -1,0 +1,22 @@
+#VSCode
+.vscode
+#Cmake build
+**/cmake-build-debug
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/install_manifest.txt
+**/CMakeFiles/
+**/CTestTestfile.cmake
+**/Makefile
+**/*.cbp
+**/CMakeScripts
+**/compile_commands.json
+**/Testing
+**/.cmake
+**/DartConfiguration.tcl
+**/CPackSourceConfig.cmake
+**/CPackConfig.cmake
+#Clion jetbrains
+.idea
+#Executable file, to avoid pople overwriting the binary when using an incorrect compiler
+bin/Maximus_Cup_Arranger.exe

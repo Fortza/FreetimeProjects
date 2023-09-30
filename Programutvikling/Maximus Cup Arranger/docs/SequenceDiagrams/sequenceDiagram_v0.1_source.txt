@@ -1,0 +1,156 @@
+title Program Sequence Diagram
+actor Actor User
+participant Main
+participant Users
+participant User
+participant Tournaments
+participant Tournament
+participant Teams
+participant Team
+participant Matches
+participant Match
+
+database Database
+
+Actor User->Main:login
+activate Main
+Main->Users:create object
+activate Users
+Users->Database:readFromFile()
+activate Database
+Database-->Users:amount of users
+
+loop all users
+Users->User:readFromFile()
+activate User
+User->Database:readFromFile()
+User<--Database:user data
+end
+deactivate Database
+
+loop until user choice
+Main->Users:menu()
+end
+
+alt menu choice
+alt login succsess
+Users->Users:login()
+Users->Users:checkUserDetails()
+Users->Main:menu
+alt Tournament
+Main->Tournaments: create object
+activate Tournaments
+Tournaments->Database:readFromFile()
+activate Database
+Tournaments<--Database: number of tournaments
+loop all tournaments
+Tournaments->Tournament: readFromFile()
+activate Tournament
+Tournament->Database:readFromFile()
+Tournament<--Database:tournment data
+deactivate Database
+end
+Tournament->Teams:create object
+activate Teams
+Teams->Database:readFromFile()
+activate Database
+Teams<--Database:team data
+loop all teams
+Teams->Team:readFromFile()
+activate Team
+Team->Database:readFromFile()
+Team<--Database:team data
+deactivate Database
+end 
+
+Tournament->Matches:create object
+activate Matches
+Matches->Database:readFromFile()
+activate Database
+Matches<--Database:number of matches
+loop all matches
+Matches->Match:readFromFile()
+activate Match
+Match->Database:readFromFile()
+Match<--Database:match data
+deactivate Database
+end
+Main->Tournaments: menu()
+alt create new tournament
+Tournaments->Tournament:add()
+Tournament->Tournament:readData()
+Tournament->Matches:addMatch()
+Matches->Match:readData()
+else select tournament
+Tournaments->Tournaments:selectTournament()
+Tournaments->Tournament:getName()
+Tournaments<--Tournament:name
+Tournaments->Tournament:printData()
+Tournament->Tournament:printData()
+Tournament->Matches:printData()
+Matches->Match:printData()
+Match->Match:printData()
+
+
+Tournaments->Database:writeToFile()
+activate Database
+Tournament->Database:writeToFile()
+Teams->Database:writeToFile()
+Team->Database:writeToFile()
+Matches->Database:writeToFile()
+Match->Database:writeToFile()
+
+deactivate Team
+deactivate Teams
+deactivate Match
+deactivate Matches
+deactivate Tournament
+deactivate Tournaments
+deactivate Database
+end
+
+end
+
+alt Team
+Main->Teams:create team object
+Teams->Database:readFromFile()
+activate Teams
+activate Database
+Teams<--Database:team data
+loop all teams
+Teams->Team:readFromFile()
+activate Team
+Team->Database:readFromFile()
+Team<--Database:team data
+deactivate Database
+end
+Main->Teams:menu()
+alt add team
+Teams->Team:readData()
+else show teams
+Teams->Team:printData()
+Team->Team:printData()
+end
+Teams->Database:writeToFile()
+activate Database
+Team->Database:writeToFile()
+deactivate Database
+deactivate Teams
+deactivate Team
+end 
+
+
+else login fail
+Users->Users:login()
+Users->Users:checkUserDetails()
+
+Users->Users:menu()
+end
+end
+loop until user choice
+Main->Main:menu()
+end
+Users->Database:writeToFile()
+activate Database
+User->Database:writeToFile()
+deactivate Database

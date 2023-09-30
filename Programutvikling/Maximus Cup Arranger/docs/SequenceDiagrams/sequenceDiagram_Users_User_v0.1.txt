@@ -1,0 +1,49 @@
+title User, Users Class Sequence Diagram
+actor Actor User
+participant Main
+participant Users
+participant User
+
+
+database Database
+
+Actor User->Main:login
+activate Main
+Main->Users:create object
+activate Users
+Users->Database:readFromFile()
+activate Database
+Database-->Users:amount of users
+
+loop all users
+Users->User:readFromFile()
+activate User
+User->Database:readFromFile()
+User<--Database:user data
+end
+deactivate Database
+
+loop until user choice
+Main->Users:menu()
+end
+
+
+alt login succsess
+Users->Users:login()
+Users->Users:checkUserDetails()
+Users->Main:menu
+
+else login fail
+Users->Users:login()
+Users->Users:checkUserDetails()
+
+Users->Users:menu()
+end
+
+loop until user choice
+Main->Main:menu()
+end
+Users->Database:writeToFile()
+activate Database
+User->Database:writeToFile()
+deactivate Database
