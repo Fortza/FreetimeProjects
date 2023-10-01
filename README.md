@@ -20,4 +20,4 @@ Fritidsprosjekt for å lære python og lage et program som lar twitch livestream
 - Generell kunnskap om API
 - Twitch API
 - Spotify API
-- Python koding
+- Python
