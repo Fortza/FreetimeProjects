@@ -1,14 +1,23 @@
-# FritidProsjekter
-Samling av prosjekter som jeg jobber med på fritiden.
-## Første prosjekt 
-Twitch.tv ChannelPoints reward som gir seerne mulighet til å legge spotify sanger på en  delt spotify spilleliste
+# Public repo
+Samling av prosjekter som jeg jobber med på fritiden og under studietiden.
 
-Prosjekt python kode som lar twitchbrukere legge til sanger på spotify på en spilleliste som streameren eier. Dette skal fungere ved at brukerne løser inn channelpoints som gir dem en mulighet til å lime inn spotify sangens URL. Programmet jeg skriver skal i bakgrunnen ta denne URL'en og legge den på bunnen av en spilleliste som streameren har valgt. Ideen er at dette skal gjøre streamen mer interaktiv for brukeren.
+## Maximus Cup Arrrangement
+Skoleprosjekt i faget Programvareutvikling hvor vi jobbet i team på 4 for å lage et program i C++ for en fiktiv kunde.
 
+### Utbytte av prosjekt 
+- Scrum
+- C++
+- Prosjekt/Gruppearbeid
+- UML
+- Universal design principles
+- Software testing, user participation, prototyping
+  
 
-### Mål:
+## Twitchbot / spotify_spilleliste_bot
+Fritidsprosjekt for å lære python og lage et program som lar twitch livestreamers lage en public spilleliste på spotify som brukerne kan legge sanger på gjennom bruk av channelpoints de har tjent på kanalen. Ideen er at dette skal gjøre streamen mer interaktiv for brukeren.
 
-- API
+### Utbytte av prosjekt
+- Generell kunnskap om API
 - Twitch API
 - Spotify API
 - Python koding
