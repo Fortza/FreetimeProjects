@@ -11,6 +11,7 @@ Skoleprosjekt i faget Programvareutvikling hvor vi jobbet i team på 4 for å la
 - UML
 - Universal design principles
 - Software testing, user participation, prototyping
+- Cmake
   
 
 ## Twitchbot / spotify_spilleliste_bot
