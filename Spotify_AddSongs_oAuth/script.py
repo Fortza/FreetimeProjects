@@ -1,7 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-#Setting up authentication
+#Setting up authentication and getting right scope for task
 scope = 'user-library-modify'
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
