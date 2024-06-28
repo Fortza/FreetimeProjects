@@ -2,7 +2,7 @@
 Samling av prosjekter som jeg jobber med på fritiden og under studietiden.
 
 ## Maximus Cup Arrrangement
-Skoleprosjekt i faget Programvareutvikling hvor vi jobbet i team på 4 for å lage et program i C++ for en fiktiv kunde.
+Skoleprosjekt i faget Programvareutvikling. Laget programvare i C++ som lar fotballklubber oprette og oppdatere turneringer.
 
 ### Utbytte av prosjektet 
 - Scrum
