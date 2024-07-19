@@ -3,11 +3,10 @@
 # 2. Henter client ID og Secret fra Spotify, lagret som env variabler for økt sikkerhet
 # 3. Bruker Get_token() POST for å hente client credential info i følge OAuth 2.0 best prac for server-server. Limited rettigheter
 # 4. Bruker get_auth_header() funksjonen for videre authn/authz for GET requests.
-# 5. search_for_artist() funksjonen finner mest populære artisten innen Norge for det navnet som brukeren skriver inn. Må ikke være helt riktig.
-# 6. Finner mest populære artisten innen Norge for det navnet som brukeren skriver inn. Må ikke være helt riktig.
-# 7. Skriver ut TOP 10 mest populære sanger for Artisten via funksjonen get_top_track_by_artist()
-# 8. Om artisten ikke blir funnet får brukeren en melding før programmet avsluttes
-# 9. Skriver ut de siste 10 album fra artisten og deres realease date
+# 5. search_for_artist() funksjonen finner mest populære artisten for det navnet som brukeren skriver inn. Må ikke være helt riktig.
+# 6. Skriver ut TOP 10 mest populære sanger for Artisten via funksjonen get_top_track_by_artist()
+# 7. Om artisten ikke blir funnet får brukeren en melding før programmet avsluttes
+# 8. Skriver ut de siste 10 album fra artisten og deres utgivelsesår. 
 
 import os # operativsystem funksjoner, i dette tilfellet tilgang til .env 
 import requests #HTTP requests, brukes for å kommunisere med Spotify Web API
@@ -88,14 +87,19 @@ def get_artist_album(token, artists_id):
     return json_result['items']
 
 
+# Main
+# Get token, into søk for artist, into getting artist ID, into Sanger, into Albumer:)
+
 token = get_token() #Kjører gettoken for å hente access token fra Spotify
 result = search_for_artist(token, navn)
 artists_id = result["id"] #nå har vi endelig iD til artisten som vi har søkt opp, denne kan brukes for andre funksjoner hos Spotify
+
 print("\n")
 print(result["name"])
 print("\n")
-album = get_artist_album(token, artists_id)
+
 songs = get_top_track_by_artist(token, artists_id)
+album = get_artist_album(token, artists_id)
 print ("Top 10 songs on Spotify by", str.upper(result["name"]))
 
 
