@@ -23,5 +23,6 @@ Fritidsprosjekt for å leke med Web API’er. Program som requester informasjon 
 - OAuth 2.0 authorization (credential code flow)
 - Web API GET/POST
 - JSON
-
+- Datahåndtering
+- Authentication & Authorization
 
