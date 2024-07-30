@@ -2,12 +2,14 @@
 Samling av prosjekter som jeg jobber med på fritiden og under studietiden.
 
 ## Azure / Terraform
-- Bli kjent med Terraform Syntax
-- Kjent med Azure dokumentasjon
+Enkel infrastruktur ment for å lære Syntax og dokumentasjon av Terraform x Azure. Laget en enkel linux VM som laster ned Docker via custom bash skript før brukeren logger seg på. Sikret gjennom SSH og ACL regler.
+
+### Utbytte av prosjektet 
 - Lage Linux VM
-- Custom Script lager Docker på ny VM
+- Custom Script lastes ned på ny VMs
 - ACL regler som filtrerer tilgang til VM via IP
 - Lage privat adresserom og public IP addresse
+- Lage subnett
  
 ## Maximus Cup Arrrangement
 Skoleprosjekt i faget Programvareutvikling. Laget programvare i C++ som lar fotballklubber oprette og oppdatere turneringer.
