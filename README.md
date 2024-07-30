@@ -1,6 +1,14 @@
 ﻿# Public repo
 Samling av prosjekter som jeg jobber med på fritiden og under studietiden.
 
+## Azure / Terraform
+- Bli kjent med Terraform Syntax
+- Kjent med Azure dokumentasjon
+- Lage Linux VM
+- Custom Script lager Docker på ny VM
+- ACL regler som filtrerer tilgang til VM via IP
+- Lage privat adresserom og public IP addresse
+ 
 ## Maximus Cup Arrrangement
 Skoleprosjekt i faget Programvareutvikling. Laget programvare i C++ som lar fotballklubber oprette og oppdatere turneringer.
 
