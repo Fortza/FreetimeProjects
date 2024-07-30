@@ -1,5 +1,5 @@
 ﻿# Public repo
-Samling av prosjekter som jeg jobber med på fritiden og under studietiden.
+**Samling av prosjekter som jeg jobber med på fritiden og under studietiden.**
 
 ## Azure / Terraform
 Enkel infrastruktur ment for å lære Syntax og dokumentasjon av Terraform x Azure. Laget en enkel linux VM som laster ned Docker via custom bash skript før brukeren logger seg på. Sikret gjennom SSH og ACL regler.
