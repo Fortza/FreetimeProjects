@@ -80,7 +80,7 @@ resource "azurerm_network_security_rule" "am_sec_Deny_rule" {
   protocol                   = "*"
   source_port_range          = "*"
   destination_port_range     = "*"
-  source_address_prefix      = "*"
+  source_address_prefix      = my_ip_address
   destination_address_prefix = "*"
 
   resource_group_name         = azurerm_resource_group.am_rg.name
@@ -127,7 +127,7 @@ resource "azurerm_linux_virtual_machine" "am_vm_docker" {
   location              = azurerm_resource_group.am_rg.location
   size                  = "Standard_B1s"
   admin_username        = "adminUser"
-  network_interface_ids = [azurerm_network_interface.am_nic_linux.id ]
+  network_interface_ids = [azurerm_network_interface.am_nic_linux.id]
 
   custom_data = filebase64("customdata.tpl") #Docker install for Linux VM
 
