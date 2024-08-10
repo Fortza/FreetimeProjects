@@ -63,7 +63,7 @@ resource "azurerm_network_security_rule" "am_sec_IP_rule" {
   protocol                   = "*"
   source_port_range          = "*"
   destination_port_range     = "*"
-  source_address_prefix      = "var.my_ip_address" #Verdi Hentes fra variabel fil
+  source_address_prefix      = var.my_ip_address #Verdi Hentes fra variabel fil
   destination_address_prefix = "*"
 
   resource_group_name         = azurerm_resource_group.am_rg.name
