@@ -10,6 +10,7 @@ Enkel infrastruktur ment for å lære Syntax og dokumentasjon av Terraform x Azu
 - ACL regler som filtrerer tilgang til VM via IP
 - Lage privat adresserom og public IP addresse
 - Laget subnett
+- Bruk av variabler for å skjule sensitiv data fra main.tf
  
 ## Maximus Cup Arrrangement
 Skoleprosjekt i faget Programvareutvikling. Laget programvare i C++ som lar fotballklubber oprette og oppdatere turneringer.
