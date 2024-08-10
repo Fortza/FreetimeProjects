@@ -1,5 +1,7 @@
 #Terraform Variabler
 terraform.tfvars
+
+#ekstra
 .terraform
 .terraform.lock.hcl
 terraform.tfstate
