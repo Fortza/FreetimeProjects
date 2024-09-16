@@ -23,5 +23,3 @@ done
 
 echo "Backup fullført til $Backup_Dir"
 
-
-0 6 * * 1-5 
