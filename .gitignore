@@ -9,3 +9,6 @@ terraform.tfstate.backup
 
 #spotifyAPI
 .env
+
+#Automatisering
+Python-Scripting-Project
