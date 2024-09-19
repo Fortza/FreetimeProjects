@@ -1,8 +1,10 @@
 # Hensiktet til skriptet er
-# Kopiere mapper med et bestemt navn til et annet område
-# Bruker skal kunne velge source og destinasjons område
-# Bruke Regex for å finne riktig navn
+# Kopiere mapper med et bestemt navn, i dette tilfelle "game" til et annet område
+# Bruker skal kunne velge source (stedet vi skal lete) og destinasjons område (destinasjon for kopiering)
+# Bruke Regex for å fjerne "game" før kopiering tar plass.
+# Bruker får velge source og destinasjon ved bruk av kommandolinje
 # Aksepterer 2 kommando linje argumenter
+
 
 import os 
 import shutil #allows us to copy and overwrite
@@ -12,7 +14,7 @@ import re #regex
 GAME_DIR_PATTERN = "game"
 
 # Finner og returnerer alle mapper under source directory som har navnet "game" i seg.
-def find_all_game_paths(source):
+def finn_alle_spill_paths(source):
     game_paths = [] 
 
     for root, dirs, files in os.walk(source): #Gå gjennom alle folders i mappestrukturen
@@ -34,16 +36,16 @@ def get_navn_fra_path(paths, fjerne): #Henter ut ordet "game" fra mappenavn før
     nye_navn = []
     for path in paths:
         _, dir_navn = os.path.split(path) # Deler opp pathen 
-        new_dir_navn = re.sub(r'_?game_?', '', dir_navn) #fjerner navnet game og eventuelle Understreker før og etter med Ragex
+        new_dir_navn = re.sub(r'_?game_?', '', dir_navn) #fjerner navnet game og eventuelle Understreker før og etter med Regex
         nye_navn.append(new_dir_navn) # Legger det nye navnet til mappa/filen inn i nye_navn array
         
     return nye_navn #returnerer nye verdi (nytt navn på endefil)
 
 
-def kopier_og_overskriv(source, dest): # kopier, og overskriv om mappen allerede finnes
-    if os.path.exists(dest):  # sjekker om mappen allerede finnes
+def kopier_og_overskriv(source, dest): # Kopier, og overskriv om mappen allerede finnes
+    if os.path.exists(dest):  # Sjekker om mappen allerede finnes
         shutil.rmtree(dest)   # Om den fantes, fjern
-    shutil.copytree(source, dest) #Nå kan vi kopiere over innhold. Siden vi bryjer copytree, vil alt bli sendt rekursive.
+    shutil.copytree(source, dest) #Nå kan vi kopiere over innhold. Siden vi bruker copytree, vil alt bli sendt rekursive.
     
 
 
@@ -56,7 +58,7 @@ def main(source, target):
     else: #hvis brukeren bare skriver mappe navn, bruker vi samme logikk som source path.
         target_path = os.path.join(cwd, target) # veien fra CWD til target path. Altså en undermappe av hvor skriptet befinner seg!
 
-    game_path = find_all_game_paths(source_path) # Lagrer unna alle game paths funnet fra start mappa   
+    game_path = finn_alle_spill_paths(source_path) # Lagrer unna alle game paths funnet fra start mappa   
     new_game_dirs = get_navn_fra_path(game_path, "game")
 
     create_dir(target_path)
