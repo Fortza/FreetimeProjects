@@ -34,6 +34,17 @@ Enkel infrastruktur ment for å lære Syntax og dokumentasjon av Terraform x Azu
 - Laget subnett
 - Bruk av variabler for å skjule sensitiv data fra main.tf
 
+## SpotifyAPI
+
+Fritidsprosjekt for å leke med Web API’er. Program som requester informasjon fra Spotify angående artister og deres top 10 sanger.  
+
+### Utbytte av prosjektet
+- Python
+- OAuth 2.0 authorization (credential code flow)
+- Web API GET/POST
+- JSON
+- Datahåndtering
+- Authentication & Authorization
  
 ## Maximus Cup Arrrangement
 Skoleprosjekt i faget Programvareutvikling. Laget programvare i C++ som lar fotballklubber oprette og oppdatere turneringer.
@@ -48,15 +59,5 @@ Skoleprosjekt i faget Programvareutvikling. Laget programvare i C++ som lar fotb
 - Cmake
   
 
-## SpotifyAPI
 
-Fritidsprosjekt for å leke med Web API’er. Program som requester informasjon fra Spotify angående artister og deres top 10 sanger.  
-
-### Utbytte av prosjektet
-- Python
-- OAuth 2.0 authorization (credential code flow)
-- Web API GET/POST
-- JSON
-- Datahåndtering
-- Authentication & Authorization
 
