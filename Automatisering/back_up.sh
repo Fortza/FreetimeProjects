@@ -2,11 +2,17 @@
 
 #lite skript som skal ta backup av terraform filen og sende det til et bestemt område
 
-echo "Starter backup, ikke slå av maskinen"
 
 #Variabler henter riktig lokasjon i linux tre
 Source_Dir="/home/ubuntu/terraform/files"
 Backup_Dir="/home/ubuntu/backup/terraform"
+
+if [ ! -d "$Source_Dir" ]; then
+    echo "Kildekatalogen finnes ikke: $Source_Dir"
+    exit 1
+fi
+
+echo "Starter backup, ikke slå av maskinen!"
 
 #Opretter backup katalog
 mkdir -p $Backup_Dir
