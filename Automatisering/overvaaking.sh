@@ -42,6 +42,8 @@ for file in "$mappe"/*; do #iterere gjennom mappa
 			dato=$(date -r "$sist_endret" +"%Y-%m-%d--%H:%M") #Dato format for nye filer til backup mappe senere
 			nytt_filnavn="${filnavn%.*}_$dato.${filnavn##*.}"
 			cp "$file" "$backupPath/$nytt_filnavn" #Kopierer ny fil til backup mappen
+			echo "$(date +'%Y-%m-%d %H:%M:%S') - Sikkerhetskopiert: $filnavn" >> "$backupPath/backup.log"
+
 
 		fi		
 	fi
