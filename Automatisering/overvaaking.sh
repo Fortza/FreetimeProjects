@@ -27,10 +27,10 @@ for file in "$mappe"/*; do #iterere gjennom mappa
             		continue
         	fi	
 		if [ $sist_endret -ge $bakTid ]; then #Er sist endret større enn 24 timer så har filen blitt endret på siste døgn.
-			lesbarTid=$(date -r "$sist_endret" +"%Y-%m-%d %H:%M%S")	 # Vise tid for endring.
+			lesbarEndret=$(date -r "$sist_endret" +"%Y-%m-%d %H:%M%S")	 # Vise tid for endring.
 			lesbarLaget=$(date -r "$filLaget" +"%Y-%m-%d %H:%M%S")   # Vise når den ble laget.
 			# Vis filnavnet og sist endret tid			
-			printf "\nFilnavn: %s \nOpprettet: %s\nSist endret: %s\n" "$filnavn" "$lesbarLaget" "$lesbarTid"
+			printf "\nFilnavn: %s \nOpprettet: %s\nSist endret: %s\n" "$filnavn" "$lesbarLaget" "$lesbarEndret"
 
 			# Før vi lager ny backup, fjerner vi eventuelle tidligere versjoner av filen med tidsstempel
 #			filnavn_base="${filnavn%.*}"
