@@ -39,7 +39,7 @@ for file in "$mappe"/*; do #iterere gjennom mappa
 				rm  $backupPath/$filnavn # Slett gamle filen først
 			fi	
 			
-			dato=$(date -r "$sist_endret" +"%m-%d--%H:%M") #Dato format for nye filer til backup mappe senere
+			dato=$(date -r "$sist_endret" +"%Y-%m-%d--%H:%M") #Dato format for nye filer til backup mappe senere
 			nytt_filnavn="${filnavn%.*}_$dato.${filnavn##*.}"
 			cp "$file" "$backupPath/$nytt_filnavn" #Kopierer ny fil til backup mappen
 
