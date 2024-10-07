@@ -1,4 +1,4 @@
-# Hensiktet til skriptet er
+# Hensiktet til skriptet:
 # Kopiere mapper med et bestemt navn, i dette tilfelle "game" til et annet område
 # Bruker skal kunne velge source (stedet vi skal lete) og destinasjons område (destinasjon for kopiering)
 # Bruke Regex for å fjerne "game" før kopiering tar plass.
