@@ -14,16 +14,20 @@ Automatiserer prosessen med å kopiere mapper med et bestemt navn fra en kilde t
 - **Arbeid med paths**: Dynamisk opprettelse og manipulering av paths med `os.path.join()` og `os.path.isabs()`.
 
 
-### Monitor_and_Backup.sh
+### Overvaaking.sh
 Dette skriptet overvåker mappen det befinner seg i for filendringer de siste 24 timene, og kopierer endrede filer til en egen backup-mappe. Det oppretter også en loggfil i backup-mappen med tidsstemplet informasjon om når filene ble sikkerhetskopiert, med fargekoding som hjelper brukeren å se hvor nylig endringene skjedde.
 
 - **Mappemonitorering**: Overvåker filer i gjeldende mappe for endringer innenfor de siste 24 timene.
 - **Backup-funksjonalitet**: Kopierer modifiserte filer til en dedikert backup-mappe med tidsstemplet filnavn.
 - **Loggføring**: Oppretter en loggfil med informasjon om sikkerhetskopierte filer, fargekodet basert på hvor nylig endringene ble gjort:
 - **Feilhåndtering**: Sikrer at backup-mappen eksisterer før kopiering, og unngår å sikkerhetskopiere skriptet selv.
+- - 🟢 Grønn: Filer endret innen de siste 30 minuttene.
+  - 🟡 Gul: Filer endret for mer enn 30 minutter, men mindre enn en time siden.
+  - 🔴 Rød: Filer endret for mer enn en time, men mindre enn 24 timer siden.
+- **Feilhåndtering**: Sikrer at backup-mappen eksisterer før kopiering, og unngår å sikkerhetskopiere skriptet selv.
 
 
-### Back_up.sh
+### Terraform_Backup.sh
 Dette skriptet tar en sikkerhetskopi av Terraform-filer fra en kildeplassering og lagrer dem i en angitt backup-katalog. Skriptet oppretter backup-katalogen hvis den ikke allerede eksisterer, og legger til tidsstempel i filnavnene for å unngå overskriving.
 
 - **Backup-håndtering**: Automatiserer prosessen med å ta sikkerhetskopi av Terraform-filer.
