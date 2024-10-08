@@ -17,7 +17,6 @@ Automatiserer prosessen med å kopiere mapper med et bestemt navn fra en kilde t
 ### Monitor_and_Backup.sh
 Dette skriptet overvåker mappen det befinner seg i for filendringer de siste 24 timene, og kopierer endrede filer til en egen backup-mappe. Det oppretter også en loggfil i backup-mappen med tidsstemplet informasjon om når filene ble sikkerhetskopiert, med fargekoding som hjelper brukeren å se hvor nylig endringene skjedde.
 
-#### Funksjoner:
 - **Mappemonitorering**: Overvåker filer i gjeldende mappe for endringer innenfor de siste 24 timene.
 - **Backup-funksjonalitet**: Kopierer modifiserte filer til en dedikert backup-mappe med tidsstemplet filnavn.
 - **Loggføring**: Oppretter en loggfil med informasjon om sikkerhetskopierte filer, fargekodet basert på hvor nylig endringene ble gjort:
