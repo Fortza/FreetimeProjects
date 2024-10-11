@@ -22,7 +22,7 @@ en_time=$((naTid - 3600)) # 1 time
 
 #Backup Variabler 
 backupPath="$mappe/backup"
-mkdir -p "$backupPath" #Lage mappe om ikke finnes for backup 
+mkdir -p "$backupPath" || { echo "Feil: Kunne ikke lage backup-mappen"; exit 1; } # Exit-kode 1 for feil ved oppretting av mappen
 
 for file in "$mappe"/*; do #iterere gjennom mappa
 	if [ -f "$file" ]; then #sjekk om forløkka stoppet på en fil
@@ -58,12 +58,13 @@ for file in "$mappe"/*; do #iterere gjennom mappa
 			echo -e "Filen ${GREEN}$filnavn${RESET} ble sendt til backup mappen"
 
 			dato=$(date -r "$sist_endret" +"%Y-%m-%d--%H:%M") #Dato format for nye filer til backup
-			nytt_filnavn="${filnavn%.*}_$dato.${filnavn##*.}" #Nytt format på navnet til filene som skal setter i backup
+			nytt_filnavn="${filnavn%.*}_$dato.${filnavn##*.}" || { echo "Feil: Kunne ikke kopiere filen til backup"; exit 2; } # Exit-kode 2 for feil av backup
 			cp "$file" "$backupPath/$nytt_filnavn" #Kopierer ny fil til backup mappen med nytt navnFormat.
 		fi		
 	fi
 done  
+	./exitCodes.sh $?
 	
-		
+	exit 0;
 
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#Filen Stats.sh skal vise brukeren litt tall på hva som er lagret i Automasjon mappen.
+#Filen skal vise brukeren litt tall på hva som er lagret i Automasjon mappen.
 #Finner og skriver ut antall skript og antall tegn i skriptet:
 #Antall Python og bash skript. 
 
