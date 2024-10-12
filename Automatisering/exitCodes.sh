@@ -3,7 +3,8 @@
 exit_code=${1:-999} 
 
 if [ $exit_code -eq 0 ]; then
-    echo "Det siste skriptet var velykket"
+    	printf "\n"
+	echo "Exit code: 0"
 
 elif [ $exit_code -eq 1 ]; then
 	echo "Skriptet møtte på et problem ved opprettelse av backup mappe"

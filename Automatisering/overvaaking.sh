@@ -44,13 +44,13 @@ for file in "$mappe"/*; do #iterere gjennom mappa
 				rm "$backupPath/${filnavn%.*}_"* # Slett gamle versjoner først
 			fi	
 
-				#Bestemmer fargen på logfilen. Grønn for de nye under 30 min gamle.
-				if [ $sist_endret -gt $tretti_min ]; then
+				#Bestemmer fargen på logfilen. Grønn for de nye under 1 time gamle.
+				if [ $sist_endret -gt $en_time ]; then
 					farge=${GREEN}
-				#Bytter farge på tidspunkt til gul over 1 time
-				elif [ $sist_endret -gt $en_time ]; then
+				#Bytter farge på tidspunkt til gul mellom 1 time og 24 timer
+				elif [ $sist_endret -gt $bakTid ]; then
 					farge=${YELLOW}
-				else #Alt annet opp til 24t er rødt
+				else #Alt annet opp over 24 timer er rødt
 					farge=${RED}
 				fi
 			#Farge blir valgt på tidsstemplet utifra if statement ovenfor. Enklere å lese for brukeren
