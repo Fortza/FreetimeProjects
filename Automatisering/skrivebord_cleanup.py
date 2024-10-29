@@ -40,3 +40,10 @@ for file in os.listdir(SourceDir): #iterere gjennom skrivebord filene/mapper
                     print(f"Flyttet: {file_path} til {PdfBackupDir}")
                 except Exception as e:
                     print(f"Kunne ikke flytte {file_path}: {e}")
+
+# Send melding til Discord hvis filer ble flyttet
+if files_moved:
+    message = f"Følgende filer ble flyttet: {', '.join(files_moved)}"
+    subprocess.run(["bash", "discordMessage.sh", message])
+else:
+    print("Ingen filer ble flyttet.")
