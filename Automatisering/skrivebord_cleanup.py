@@ -5,13 +5,12 @@
 import os 
 import shutil #allows us to copy and overwrite
 import sys # commandline arguments
-import regex
 
 def create_dir(BackupDir): #lager detinasjonsmappe om den ikke eksisterer
     if not os.path.exists(BackupDir):
         os.mkdir(BackupDir)
 
-SourceDir = "C:\Users\arvid\Desktop"
+SourceDir = "C:\\Users\\arvid\\Desktop"
 BackupDir = "D:\\Skoleogprivat\\Backup"
 create_dir(BackupDir)
 
