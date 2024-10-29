@@ -5,6 +5,7 @@ exit_code=${1:-999}
 if [ $exit_code -eq 0 ]; then
     	printf "\n"
 	echo "Exit code: 0"
+    echo "Denne meldingen kommer fra exitCodes.sh"
 
 elif [ $exit_code -eq 1 ]; then
 	echo "Skriptet møtte på et problem ved opprettelse av backup mappe"
