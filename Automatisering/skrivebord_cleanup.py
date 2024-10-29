@@ -4,16 +4,14 @@
 
 import os 
 import shutil #allows us to copy and overwrite
-import sys # commandline arguments
-import subprocess  # allows us to run shell commands ( for å kjøre bash skriptet)
 from config import SOURCE_DIR, BACKUP_DIR, TEST_DIR, WEBHOOK_URL
 from discordMessages import send_disc_melding # Bruker WEBHOOK til å sende egendefinert melding til discord kanalen
+
 
 
 def create_dir(BackupDir): #lager detinasjonsmappe om den ikke eksisterer
     if not os.path.exists(BackupDir):
         os.mkdir(BackupDir)
-
 
 SourceDir = TEST_DIR #Bruk TEST_DIR under testing.
 BackupDir = BACKUP_DIR 
