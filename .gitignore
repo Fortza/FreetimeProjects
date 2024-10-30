@@ -19,3 +19,4 @@ discordMessage.sh
 config.py
 
 __pycache__/
+Automatisering/__pycache__/
