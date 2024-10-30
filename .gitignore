@@ -17,3 +17,5 @@ Bok1.xlsx
 backup
 discordMessage.sh
 config.py
+
+__pycache__/

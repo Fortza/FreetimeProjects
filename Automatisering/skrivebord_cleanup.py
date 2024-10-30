@@ -43,16 +43,17 @@ for file in os.listdir(SourceDir): #iterere gjennom skrivebord filene/mapper
             if os.path.exists(file_path):
                 try: 
                     shutil.move(file_path, os.path.join(PdfBackupDir, file))
-                    print(f"Flyttet: {file_path} til {PdfBackupDir}")
+                    print(f"Flyttet: {file_path} til \t {PdfBackupDir}")
                     files_moved.append(file)
                 except Exception as e:
                     print(f"Kunne ikke flytte {file_path}: {e}")
 
+
+
 # Send melding til Discord hvis filer ble flyttet
 if files_moved:
     cleaned_files = [repr(file) for file in files_moved]
-    message = f"Følgende filer ble flyttet: {', '.join(cleaned_files)}"
-    #message = f"Følgende filer ble flyttet: {', '.join(files_moved)}"
+    message = "**Følgende filer ble flyttet:**\n" + "\n".join(cleaned_files)
     send_disc_melding(WEBHOOK_URL, message)
 else:
     print("Ingen filer ble flyttet.")
