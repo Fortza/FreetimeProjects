@@ -26,6 +26,12 @@ Dette skriptet overvåker mappen det befinner seg i for filendringer de siste 24
   - 🔴 Rød: Filer endret for mer enn en time, men mindre enn 24 timer siden.
 - **Feilhåndtering**: Sikrer at backup-mappen eksisterer før kopiering, og unngår å sikkerhetskopiere skriptet selv.
 
+### Skrivebord_cleanup.py
+Automatiserer prosessen med å holde skrivebordet ryddig ved å flytte spesifikke filtyper til bestemte mapper, og sender en melding på Discord når oppgaven er utført.
+
+- **Filorganisering**: Flytter .docx-filer til en Docs-mappe og .pdf-filer til en PDF-mappe på en backup-lokasjon.
+- **Oppretting av mapper**: Oppretter mapper automatisk hvis de ikke finnes.
+- **Varsling via Discord**: Sender en melding til Discord med en liste over filene som ble flyttet.
 
 ### Terraform_Backup.sh
 Dette skriptet tar en sikkerhetskopi av Terraform-filer fra en kildeplassering og lagrer dem i en angitt backup-katalog. Skriptet oppretter backup-katalogen hvis den ikke allerede eksisterer, og legger til tidsstempel i filnavnene for å unngå overskriving.
