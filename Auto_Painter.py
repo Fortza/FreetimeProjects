@@ -70,7 +70,7 @@ pyautogui.moveTo(830,188,0.5) #Tekst box
 pyautogui.click()
 pyautogui.moveTo(609,558,0.5)
 
-pyautogui.typewrite('aaaa Ansett meg, Takk !:D',interval=0.5)
+pyautogui.typewrite('aaaa Hei! :)',interval=0.5)
 
 pyautogui.moveTo(961,602,0.5)
 pyautogui.click()
