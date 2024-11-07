@@ -1,4 +1,6 @@
-## Oppdaterer systemet og installerer nødvendige pakker
+#!/bin/bash
+echo "InstallDocker.sh started" > /tmp/installDocker.log
+# Oppdaterer systemet og installerer nødvendige pakker
 sudo apt-get update -y &&
 sudo apt-get install -y \
     apt-transport-https \
@@ -22,3 +24,4 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io &&
 sudo usermod -aG docker ubuntu
 
 echo "Docker installasjon fullført. Vennligst logg ut og inn igjen for å aktivere gruppeendringen."
+echo "Docker installasjon Velykket" > /tmp/installDocker.log

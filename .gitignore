@@ -2,8 +2,6 @@
 terraform.tfvars
 
 
-#VM installaasjon
-installDocker.sh
 
 
 #ekstra

@@ -81,7 +81,7 @@ resource "azurerm_network_security_rule" "am_sec_Deny_rule" {
   protocol                   = "*"
   source_port_range          = "*"
   destination_port_range     = "*"
-  source_address_prefix      = my_ip_address
+  source_address_prefix      = "*" #Blokkerer all annet trafikk inn mot nettverket
   destination_address_prefix = "*"
 
   resource_group_name         = azurerm_resource_group.am_rg.name
@@ -130,7 +130,7 @@ resource "azurerm_linux_virtual_machine" "am_vm_docker" {
   admin_username        = "adminUser"
   network_interface_ids = [azurerm_network_interface.am_nic_linux.id]
 
-  custom_data = file("installDocker.sh") #Docker install for Linux VM
+  custom_data = base64encode(file("installDocker.sh")) #Docker install for Linux VM
 
   admin_ssh_key {
     username   = "adminUser"
