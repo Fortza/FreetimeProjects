@@ -42,20 +42,17 @@ Dette skriptet tar en sikkerhetskopi av Terraform-filer fra en kildeplassering o
 - **Looping**: Itererer gjennom filer med spesifikke endelser (`.tf`) for å utføre kopiering.
 
 # Azure / Terraform
-Enkel infrastruktur ment for å lære Syntax og dokumentasjon av Terraform og Azure.
+Enkel infrastruktur bestående av en VM som kjører en Docker-container med en Flask-applikasjon, automatisk satt opp og konfigurert ved hjelp av Terraform.
 
 - Lage Linux VM med public IP-adresse og privat subnett
 - Installerer Docker og kjører en enkel Flask-applikasjon for å simulere en webapplikasjon
 - Kopierer Git-repositorium til VM for å hente Flask-applikasjonen
 - Custom Script lastes ned på ny VMs
 - ACL regler som filtrerer tilgang til VM via IP
-- Lage privat adresserom og public IP addresse
-- Laget subnett
 - Bruk av variabler for å skjule sensitiv data fra main.tf
 
 
 # SpotifyAPI
-
 Fritidsprosjekt for å leke med Web API’er. Program som requester informasjon fra Spotify angående artister og deres top 10 sanger.  
 
 - OAuth 2.0 authorization (credential code flow)
