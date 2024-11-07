@@ -44,12 +44,15 @@ Dette skriptet tar en sikkerhetskopi av Terraform-filer fra en kildeplassering o
 # Azure / Terraform
 Enkel infrastruktur ment for å lære Syntax og dokumentasjon av Terraform og Azure.
 
-- Lage Linux VM
+- Lage Linux VM med public IP-adresse og privat subnett
+- Installerer Docker og kjører en enkel Flask-applikasjon for å simulere en webapplikasjon
+- Kopierer Git-repositorium til VM for å hente Flask-applikasjonen
 - Custom Script lastes ned på ny VMs
 - ACL regler som filtrerer tilgang til VM via IP
 - Lage privat adresserom og public IP addresse
 - Laget subnett
 - Bruk av variabler for å skjule sensitiv data fra main.tf
+
 
 # SpotifyAPI
 
