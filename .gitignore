@@ -1,6 +1,11 @@
 #Terraform Variabler
 terraform.tfvars
 
+
+#VM installaasjon
+installDocker.sh
+
+
 #ekstra
 .terraform
 .terraform.lock.hcl
@@ -17,6 +22,7 @@ Bok1.xlsx
 backup
 discordMessage.sh
 config.py
+
 
 __pycache__/
 Automatisering/__pycache__/

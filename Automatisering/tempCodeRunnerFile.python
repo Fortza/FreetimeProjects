@@ -1,0 +1,9 @@
+#First attempt at botting
+#Hensikten med skriptet er å bevege musklikkeren til bestemte steder på skjermen og trykke på knapper.
+#Forhåpentligvis gir dette muligheten til å botte på runescape.
+
+import pyautogui
+import time
+
+skjermbredde, skjermhøyde = pyautogui.size()
+print(skjermbredde, skjermhøyde)

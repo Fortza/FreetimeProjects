@@ -44,6 +44,7 @@ resource "azurerm_subnet" "am_subnet" {
   address_prefixes     = ["10.10.1.0/24"]
 }
 
+#Regel gruppe
 resource "azurerm_network_security_group" "am_sec_group" {
   name                = "AM_Sec_Group"
   location            = azurerm_resource_group.am_rg.location
@@ -58,7 +59,7 @@ resource "azurerm_network_security_group" "am_sec_group" {
 resource "azurerm_network_security_rule" "am_sec_IP_rule" {
   name                       = "Source_IP_Rule"
   priority                   = 100
-  direction                  = "Inbound" #hvem som skal få lov til å sende trafikk inn i nettverket (bare din IP)
+  direction                  = "Inbound" #hvem som skal få lov til å sende trafikk inn i nettverket (bare min IP)
   access                     = "Allow"
   protocol                   = "*"
   source_port_range          = "*"
@@ -129,7 +130,7 @@ resource "azurerm_linux_virtual_machine" "am_vm_docker" {
   admin_username        = "adminUser"
   network_interface_ids = [azurerm_network_interface.am_nic_linux.id]
 
-  custom_data = filebase64("customdata.tpl") #Docker install for Linux VM
+  custom_data = file("installDocker.sh") #Docker install for Linux VM
 
   admin_ssh_key {
     username   = "adminUser"
