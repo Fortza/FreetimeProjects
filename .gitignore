@@ -22,5 +22,6 @@ discordMessage.sh
 config.py
 
 
-__pycache__/
+__pycache__
 Automatisering/__pycache__/
+
