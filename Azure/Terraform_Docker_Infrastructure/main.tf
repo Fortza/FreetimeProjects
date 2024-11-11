@@ -130,7 +130,7 @@ resource "azurerm_linux_virtual_machine" "am_vm_docker" {
   admin_username        = "adminUser"
   network_interface_ids = [azurerm_network_interface.am_nic_linux.id]
 
-  custom_data = base64encode(file("installDocker.sh")) #Docker install for Linux VM
+  custom_data = base64encode(file("installDocker-ApacheSpark.sh")) #Docker install for Linux VM
 
   admin_ssh_key {
     username   = "adminUser"
